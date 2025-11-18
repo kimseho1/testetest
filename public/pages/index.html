@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인 페이지 - E-Commerce</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header-container">
+            <!-- 로고 -->
+            <a href="/pages/index.html" class="header-logo">🛒 E-Commerce</a>
+
+            <!-- 네비게이션 -->
+            <nav class="header-nav">
+                <!-- 검색 -->
+                <form class="header-search">
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        placeholder="상품 검색..."
+                        id="search-input"
+                    >
+                    <button type="submit" class="search-btn">검색</button>
+                </form>
+            </nav>
+
+            <!-- 액션 버튼 -->
+            <div class="header-actions">
+                <!-- 동적으로 렌더링됨 (main.js) -->
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="main-content">
+        <div class="container">
+            <!-- 페이지 타이틀 -->
+            <div class="page-header">
+                <h1 class="page-title">추천 상품</h1>
+                <p class="page-subtitle">다양한 상품을 만나보세요</p>
+            </div>
+
+            <!-- 카테고리 필터 -->
+            <div class="category-filter">
+                <button class="category-btn active" data-category="all">전체</button>
+                <button class="category-btn" data-category="전자제품">전자제품</button>
+                <button class="category-btn" data-category="컴퓨터 주변기기">컴퓨터 주변기기</button>
+                <button class="category-btn" data-category="가방">가방</button>
+                <button class="category-btn" data-category="패션">패션</button>
+                <button class="category-btn" data-category="홈/리빙">홈/리빙</button>
+                <button class="category-btn" data-category="스포츠">스포츠</button>
+                <button class="category-btn" data-category="도서">도서</button>
+            </div>
+
+            <!-- 상품 목록 -->
+            <div id="product-list" class="product-grid">
+                <!-- 상품 카드가 동적으로 렌더링됨 -->
+            </div>
+
+            <!-- 로딩 상태 -->
+            <div id="loading-state" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p>상품을 불러오는 중...</p>
+            </div>
+
+            <!-- 빈 상태 -->
+            <div id="empty-state" class="empty-state hidden">
+                <div class="empty-icon">📦</div>
+                <h3>상품이 없습니다</h3>
+                <p>검색 조건을 변경해보세요</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>고객 서비스</h3>
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">자주 묻는 질문</a></li>
+                        <li><a href="#">1:1 문의</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>회사 정보</h3>
+                    <ul>
+                        <li><a href="#">회사 소개</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>쇼핑 가이드</h3>
+                    <ul>
+                        <li><a href="#">배송 안내</a></li>
+                        <li><a href="#">교환/반품 안내</a></li>
+                        <li><a href="#">결제 방법</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 E-Commerce. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+    <script src="/js/product.js"></script>
+</body>
+</html>

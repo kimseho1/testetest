@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 상세 - E-Commerce</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header-container">
+            <!-- 로고 -->
+            <a href="/pages/index.html" class="header-logo">🛒 E-Commerce</a>
+
+            <!-- 네비게이션 -->
+            <nav class="header-nav">
+                <!-- 검색 -->
+                <form class="header-search">
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        placeholder="상품 검색..."
+                        id="search-input"
+                    >
+                    <button type="submit" class="search-btn">검색</button>
+                </form>
+            </nav>
+
+            <!-- 액션 버튼 -->
+            <div class="header-actions">
+                <!-- 동적으로 렌더링됨 (main.js) -->
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="main-content">
+        <div class="product-detail-container">
+            <!-- 뒤로 가기 버튼 -->
+            <div class="breadcrumb">
+                <a href="/pages/index.html" class="breadcrumb-link">← 상품 목록으로 돌아가기</a>
+            </div>
+
+            <!-- 로딩 상태 -->
+            <div id="loading-state" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p>상품 정보를 불러오는 중...</p>
+            </div>
+
+            <!-- 에러 상태 -->
+            <div id="error-state" class="empty-state hidden">
+                <div class="empty-icon">⚠️</div>
+                <h3>상품을 찾을 수 없습니다</h3>
+                <p>요청하신 상품이 존재하지 않거나 삭제되었습니다.</p>
+                <a href="/pages/index.html" class="btn btn-primary" style="margin-top: 20px;">상품 목록으로 이동</a>
+            </div>
+
+            <!-- 상품 상세 정보 -->
+            <div id="product-detail" class="product-detail hidden">
+                <!-- 상품 이미지 -->
+                <div class="product-detail-image-wrapper">
+                    <div class="product-detail-image-container">
+                        <img 
+                            id="product-image" 
+                            src="" 
+                            alt="" 
+                            class="product-detail-image"
+                            onerror="this.src='/images/placeholder.svg'"
+                        >
+                    </div>
+                </div>
+
+                <!-- 상품 정보 -->
+                <div class="product-detail-info">
+                    <div class="product-detail-category" id="product-category"></div>
+                    <h1 class="product-detail-name" id="product-name"></h1>
+                    <div class="product-detail-price" id="product-price"></div>
+                    <div class="product-detail-description" id="product-description"></div>
+                    
+                    <!-- 재고 정보 -->
+                    <div class="product-detail-stock" id="product-stock"></div>
+
+                    <!-- 수량 선택 -->
+                    <div class="quantity-selector">
+                        <label for="quantity-input" class="quantity-label">수량</label>
+                        <div class="quantity-controls">
+                            <button type="button" class="quantity-btn" id="decrease-btn">-</button>
+                            <input 
+                                type="number" 
+                                id="quantity-input" 
+                                class="quantity-input" 
+                                value="1" 
+                                min="1" 
+                                max="99"
+                            >
+                            <button type="button" class="quantity-btn" id="increase-btn">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 액션 버튼 -->
+                    <div class="product-detail-actions">
+                        <button 
+                            id="add-to-cart-btn" 
+                            class="add-to-cart-btn"
+                        >
+                            🛒 장바구니 담기
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>고객 서비스</h3>
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">자주 묻는 질문</a></li>
+                        <li><a href="#">1:1 문의</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>회사 정보</h3>
+                    <ul>
+                        <li><a href="#">회사 소개</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>쇼핑 가이드</h3>
+                    <ul>
+                        <li><a href="#">배송 안내</a></li>
+                        <li><a href="#">교환/반품 안내</a></li>
+                        <li><a href="#">결제 방법</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 E-Commerce. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+    <script src="/js/product-detail.js"></script>
+</body>
+</html>

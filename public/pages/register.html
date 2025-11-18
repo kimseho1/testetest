@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 - E-Commerce</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <!-- 헤더 -->
+            <div class="auth-header">
+                <div class="auth-logo">🛒 E-Commerce</div>
+                <h1 class="auth-title">회원가입</h1>
+                <p class="auth-subtitle">새로운 계정을 만들어 쇼핑을 시작하세요</p>
+            </div>
+
+            <!-- 회원가입 폼 -->
+            <form id="register-form" class="auth-form">
+                <!-- 이메일 -->
+                <div class="form-group">
+                    <label for="email" class="form-label">이메일 *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-input" 
+                        placeholder="example@email.com"
+                        required
+                        autocomplete="email"
+                    >
+                    <div id="email-error" class="form-error"></div>
+                </div>
+
+                <!-- 비밀번호 -->
+                <div class="form-group">
+                    <label for="password" class="form-label">비밀번호 *</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        class="form-input" 
+                        placeholder="최소 6자 이상"
+                        required
+                        autocomplete="new-password"
+                    >
+                    <div id="password-error" class="form-error"></div>
+                    
+                    <!-- 비밀번호 강도 표시 -->
+                    <div class="password-strength">
+                        <div class="password-strength-bar"></div>
+                    </div>
+                    <div class="password-strength-text"></div>
+                </div>
+
+                <!-- 비밀번호 확인 -->
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">비밀번호 확인 *</label>
+                    <input 
+                        type="password" 
+                        id="confirmPassword" 
+                        name="confirmPassword" 
+                        class="form-input" 
+                        placeholder="비밀번호를 다시 입력하세요"
+                        required
+                        autocomplete="new-password"
+                    >
+                    <div id="confirmPassword-error" class="form-error"></div>
+                </div>
+
+                <!-- 이름 -->
+                <div class="form-group">
+                    <label for="name" class="form-label">이름 *</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        class="form-input" 
+                        placeholder="홍길동"
+                        required
+                        autocomplete="name"
+                    >
+                    <div id="name-error" class="form-error"></div>
+                </div>
+
+                <!-- 전화번호 (선택) -->
+                <div class="form-group">
+                    <label for="phone" class="form-label">전화번호</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        class="form-input" 
+                        placeholder="010-1234-5678"
+                        autocomplete="tel"
+                    >
+                    <div id="phone-error" class="form-error"></div>
+                </div>
+
+                <!-- 제출 버튼 -->
+                <button type="submit" class="auth-submit-btn">
+                    회원가입
+                </button>
+            </form>
+
+            <!-- 구분선 -->
+            <div class="auth-divider">
+                <span>또는</span>
+            </div>
+
+            <!-- 푸터 -->
+            <div class="auth-footer">
+                <p class="auth-footer-text">
+                    이미 계정이 있으신가요?
+                    <a href="/pages/login.html" class="auth-footer-link">로그인</a>
+                </p>
+                <a href="/pages/index.html" class="auth-back-link">
+                    ← 메인 페이지로 돌아가기
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+    <script src="/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+{
+  "name": "ecommerce-aws-platform",
+  "version": "1.0.0",
+  "description": "AWS 기반 풀스택 이커머스 플랫폼",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js",
+    "test": "jest --runInBand --detectOpenHandles --forceExit",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --runInBand --detectOpenHandles --forceExit",
+    "db:init": "node config/initDatabase.js",
+    "db:reset": "node config/initDatabase.js --reset",
+    "db:schema": "node config/initDatabase.js --schema",
+    "db:seed": "node config/initDatabase.js --seed"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "./__tests__/setup.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "controllers/**/*.js",
+      "models/**/*.js",
+      "services/**/*.js",
+      "middleware/**/*.js"
+    ]
+  },
+  "keywords": [
+    "ecommerce",
+    "aws",
+    "nodejs",
+    "express",
+    "mysql"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "aws-sdk": "^2.1692.0",
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "mysql2": "^3.15.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.2.0",
+    "supertest": "^7.1.4"
+  }
+}

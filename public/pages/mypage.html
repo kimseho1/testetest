@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지 - E-Commerce</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/mypage.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header-container">
+            <a href="/pages/index.html" class="header-logo">E-Commerce</a>
+            <nav class="header-nav">
+                <div class="header-search">
+                    <form class="flex gap-1">
+                        <input type="text" class="search-input" placeholder="상품 검색...">
+                        <button type="submit" class="search-btn">검색</button>
+                    </form>
+                </div>
+            </nav>
+            <div class="header-actions">
+                <!-- 동적으로 업데이트됨 -->
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">마이페이지</h1>
+
+            <div class="mypage-layout">
+                <!-- 사용자 정보 섹션 -->
+                <section class="card mypage-section">
+                    <div class="card-header flex-between">
+                        <h2>내 정보</h2>
+                        <button class="btn btn-primary btn-sm" id="edit-profile-btn">정보 수정</button>
+                    </div>
+                    <div class="card-body">
+                        <div id="profile-view" class="profile-view">
+                            <div class="profile-item">
+                                <span class="profile-label">이름</span>
+                                <span class="profile-value" id="profile-name">-</span>
+                            </div>
+                            <div class="profile-item">
+                                <span class="profile-label">이메일</span>
+                                <span class="profile-value" id="profile-email">-</span>
+                            </div>
+                            <div class="profile-item">
+                                <span class="profile-label">전화번호</span>
+                                <span class="profile-value" id="profile-phone">-</span>
+                            </div>
+                            <div class="profile-item">
+                                <span class="profile-label">가입일</span>
+                                <span class="profile-value" id="profile-created">-</span>
+                            </div>
+                        </div>
+
+                        <form id="profile-edit-form" class="profile-edit-form hidden">
+                            <div class="form-group">
+                                <label class="form-label" for="edit-name">이름</label>
+                                <input type="text" id="edit-name" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="edit-email">이메일</label>
+                                <input type="email" id="edit-email" class="form-input" disabled>
+                                <small class="text-secondary">이메일은 변경할 수 없습니다</small>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="edit-phone">전화번호</label>
+                                <input type="tel" id="edit-phone" class="form-input" placeholder="010-1234-5678">
+                            </div>
+                            <div class="form-actions flex gap-2">
+                                <button type="submit" class="btn btn-primary">저장</button>
+                                <button type="button" class="btn btn-secondary" id="cancel-edit-btn">취소</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- 주문 내역 섹션 -->
+                <section class="card mypage-section">
+                    <div class="card-header">
+                        <h2>주문 내역</h2>
+                    </div>
+                    <div class="card-body">
+                        <div id="orders-loading" class="loading-container">
+                            <div class="spinner"></div>
+                            <p>주문 내역을 불러오는 중...</p>
+                        </div>
+                        <div id="orders-empty" class="empty-state hidden">
+                            <p>주문 내역이 없습니다.</p>
+                            <a href="/pages/index.html" class="btn btn-primary mt-2">쇼핑하러 가기</a>
+                        </div>
+                        <div id="orders-list" class="orders-list hidden">
+                            <!-- 주문 목록이 동적으로 추가됨 -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- 주문 상세 모달 -->
+    <div id="order-detail-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>주문 상세 정보</h3>
+                <button class="modal-close" id="close-modal-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="order-detail-content">
+                    <!-- 주문 상세 내용이 동적으로 추가됨 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>고객 서비스</h3>
+                    <ul>
+                        <li><a href="#">자주 묻는 질문</a></li>
+                        <li><a href="#">배송 정보</a></li>
+                        <li><a href="#">반품/교환</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>회사 정보</h3>
+                    <ul>
+                        <li><a href="#">회사 소개</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>문의하기</h3>
+                    <ul>
+                        <li>이메일: support@ecommerce.com</li>
+                        <li>전화: 1588-0000</li>
+                        <li>운영시간: 평일 09:00-18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 E-Commerce. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/mypage.js"></script>
+</body>
+</html>
