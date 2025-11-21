@@ -34,8 +34,15 @@ const PORT = process.env.PORT || 3000;
 // ============================================
 
 // CORS 설정
+const allowedOrigins = process.env.CORS_ORIGIN 
+    ? process.env.CORS_ORIGIN.split(',').map(origin => origin.trim())
+    : ['http://localhost:3000', '*'];
+
 app.use(cors({
-    origin: process.env.CORS_ORIGIN || '*',
+    origin: [
+        'http://localhost:3000',
+        'https://djhxeq66lhjhh.cloudfront.net'
+    ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
